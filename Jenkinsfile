@@ -8,6 +8,7 @@ stage('deploy changes ') {
     cd /root/project/Drupal_project
     git pull
     ls -l
+    cd src
     composer install
     """
 }  
