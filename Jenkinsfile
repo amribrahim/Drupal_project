@@ -1,6 +1,6 @@
 node('linkdev'){
 stage('pull the latest code ') {
- checkout([$class: 'GitSCM', branches: [[name: "master"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:amribrahim/Drupal_project.git']]])
+ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-user', url: 'https://github.com/amribrahim/Drupal_project.git']]])
 }
 stage('change to the project') {
 sh "cd ./Drupal_project/src "
