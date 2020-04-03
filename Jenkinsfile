@@ -1,6 +1,6 @@
 node('linkdev'){
 stage('pull the latest code ') {
-sh "git pull https://github.com/amribrahim/Drupal_project.git"
+ checkout([$class: 'GitSCM', branches: [[name: "master"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:amribrahim/Drupal_project.git']]])
 }
 stage('change to the project') {
 sh "cd ./Drupal_project/src "
