@@ -1,11 +1,17 @@
 node('linkdev'){
-stage('stage1') {
-sh "hostname"
+stage('change to the project') {
+sh "cd /root/project/Drupal_project/src"
 }
-stage('stage2') {
-sh "ls /"
+stage('pull the latest code ') {
+sh "git pull https://github.com/amribrahim/Drupal_project.git"
 }
-stage('stage3') {
-sh '''echo stage3 steps'''
+stage('Clearing drush caches.') {
+sh "drush cache-clear drush"
+}
+stage('Clearing drush caches.') {
+sh "drush cache-clear drush"
+}
+stage('Clearing drush caches.') {
+sh "drush cache-clear drush"
 }
 }
