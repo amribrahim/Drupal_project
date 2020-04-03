@@ -1,6 +1,6 @@
 node('linkdev'){
 stage('pull the latest code ') {
-sh "git clone https://github.com/amribrahim/Drupal_project.git"
+sh "git pull https://github.com/amribrahim/Drupal_project.git"
 }
 stage('change to the project') {
 sh "cd ./Drupal_project/src "
