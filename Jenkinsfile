@@ -8,16 +8,9 @@ sh "cd ./Drupal_project/src "
 stage('change to the project') {
 sh "cp * -rf  /root/project/Drupal_project/src"
 }
-stage('change to source ') {
-sh "cd /src"
-}
 stage('build the project') {
-sh "composer install"
+sh "composer install /root/project/Drupal_project/src"
 }
-stage('Clearing drush caches.') {
-sh "drush cache-clear drush"
-}
-
   
 }
 
