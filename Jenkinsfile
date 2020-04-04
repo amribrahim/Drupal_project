@@ -17,8 +17,15 @@ stage('deploy changes ') {
    sh """ 
     #!/bin/bash
     cd /root/project/Drupal_project
-    ls
     bash post-deployment.sh
+    """
+ }
+ 
+  stage('backup the source code and database'){
+   sh """ 
+    #!/bin/bash
+    cd /root/project/Drupal_project
+    bash backup.sh
     """
  }
 /*
