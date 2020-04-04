@@ -1,6 +1,6 @@
 node('linkdev'){
 stage('pull the latest code ') {
- checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-user', url: 'https://github.com/amribrahim/Drupal_project.git']]])
+// checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-user', url: 'https://github.com/amribrahim/Drupal_project.git']]])
 }
 stage('deploy changes ') {
  sh """ 
@@ -12,6 +12,11 @@ stage('deploy changes ') {
     composer install
     """
 }  
+ 
+ stage('deploy changes '){
+   sh label: '', script: 'chmod 777 post-deployment.sh && ./post-deployment.sh'
+ 
+ }
 /*
  stage('copy files to src') {
 sh label: '', script: 'cp * -rf  /root/project/Drupal_project/src'
