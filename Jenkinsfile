@@ -18,7 +18,7 @@ stage('deploy changes ') {
     #!/bin/bash
     cd /root/project/Drupal_project
     ls
-    ./post-deployment.sh
+    bash post-deployment.sh
     """
  }
 /*
