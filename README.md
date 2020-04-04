@@ -7,3 +7,6 @@ This project consists of the following
 #### the Flow of deployment like the following  
 
 ![deployment flow](/flowdigram.jpg)
+
+#### Docker compose:
+
