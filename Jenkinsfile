@@ -13,9 +13,12 @@ stage('deploy changes ') {
     """
 }  
  
- stage('deploy changes '){
-   sh label: '', script: 'chmod 777 post-deployment.sh && ./post-deployment.sh'
- 
+ stage('Post Deployment stage '){
+   sh """ 
+    #!/bin/bash
+    cd /root/project/Drupal_project
+    ./post-deployment.sh
+    """
  }
 /*
  stage('copy files to src') {
